@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { IconSparkle, IconPhone, IconMail, IconGlobe, IconPin, IconArrow } from '../icons.jsx'
+import Logo from './Logo.jsx'
+import { IconPhone, IconMail, IconGlobe, IconPin, IconArrow } from '../icons.jsx'
 
 const quickLinks = [
   { label: 'Home', to: '/' },
@@ -39,15 +40,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.4fr]">
           {/* Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-full border border-gold-400/60 bg-maroon-900">
-                <IconSparkle width={22} height={22} className="text-gold-300" />
-              </span>
-              <span className="leading-none">
-                <span className="block font-display text-lg tracking-[0.14em] text-cream-50">VASTU ASTRO</span>
-                <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.34em] text-gold-300">by BL Gour</span>
-              </span>
-            </Link>
+            <Logo dark />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream-100/65">
               Personalised Vastu and Astrology guidance for harmony, clarity and success in your home,
               business and life.

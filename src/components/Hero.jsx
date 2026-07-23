@@ -1,24 +1,40 @@
 import { Button } from './ui.jsx'
-import { Mandala } from './Decor.jsx'
-import HeroArt from './HeroArt.jsx'
 import { IconCalendar, IconChevron } from '../icons.jsx'
 
 const trust = ['Trusted Guidance', 'Personalised Solutions', 'Online & In-Person']
 
+// Respect Vite's base so the asset resolves at a domain root *and* under a subpath
+const asset = (file) => `${import.meta.env.BASE_URL}${file}`
+
+// Matches the photo's cream backdrop so the image blends seamlessly into the section
+const CREAM = '#f7f1e5'
+
 export default function Hero() {
   return (
-    <section id="home" className="relative flex min-h-[92vh] items-center overflow-hidden bg-white pt-24 pb-14 lg:min-h-[88vh] lg:pt-28">
-      {/* ---- Full-bleed background layer ---- */}
-      <div className="pointer-events-none absolute inset-0">
-        <Mandala className="absolute -left-40 top-4 h-96 w-96 text-gold-500/10" />
-        <Mandala className="absolute right-10 bottom-0 h-[360px] w-[360px] text-maroon-700/[0.05]" />
+    <section
+      id="home"
+      className="relative flex min-h-[92vh] items-center overflow-hidden pt-24 pb-14 lg:min-h-[88vh] lg:pt-28"
+      style={{ backgroundColor: CREAM }}
+    >
+      {/* ---- Background photo ---- */}
+      <div className="absolute inset-0" aria-hidden="true">
+        <picture>
+          <source srcSet={asset('hero-compass.webp')} type="image/webp" />
+          <img
+            src={asset('hero-compass.jpg')}
+            alt=""
+            fetchPriority="high"
+            className="h-full w-full object-cover object-[75%_center] lg:object-right"
+          />
+        </picture>
 
-        {/* Compass composition — large, bleeding off the right edge */}
-        <HeroArt className="absolute right-[-14%] top-1/2 h-[135%] w-auto -translate-y-1/2 sm:right-[-8%] lg:right-[-4%] lg:h-[125%]" />
-
-        {/* White wash so the left-side content stays readable over the art */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/92 to-white/30 lg:via-white/85 lg:to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent" />
+        {/* Left-to-right wash so the copy stays readable over the artwork */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(to right, ${CREAM} 0%, ${CREAM}f0 32%, ${CREAM}99 55%, transparent 78%)`,
+          }}
+        />
       </div>
 
       {/* ---- Content ---- */}
@@ -35,7 +51,7 @@ export default function Hero() {
             <span className="h-2 w-2 rotate-45 border border-gold-500" />
           </div>
 
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-maroon-900/70">
+          <p className="mt-6 max-w-md text-lg leading-relaxed text-maroon-900/75">
             Personalised Vastu and Astrology guidance for harmony, clarity and success.
           </p>
 

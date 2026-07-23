@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Button } from './ui.jsx'
+import Logo from './Logo.jsx'
 import { IconSparkle } from '../icons.jsx'
 
 const links = [
@@ -11,20 +12,6 @@ const links = [
   { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },
 ]
-
-function Logo() {
-  return (
-    <Link to="/" className="flex items-center gap-3">
-      <span className="grid h-11 w-11 place-items-center rounded-full border border-gold-400/70 bg-gradient-to-br from-maroon-700 to-maroon-900">
-        <IconSparkle width={22} height={22} className="text-gold-300" />
-      </span>
-      <span className="leading-none">
-        <span className="block font-display text-lg tracking-[0.14em] text-maroon-800">VASTU ASTRO</span>
-        <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.34em] text-gold-600">by BL Gour</span>
-      </span>
-    </Link>
-  )
-}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
