@@ -55,7 +55,7 @@ export default function WhyChoose() {
             <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-cream-100/75">
               Connect with BL Gour for expert guidance tailored to your unique needs.
             </p>
-            <Button variant="gold" href="#contact" className="mt-7">Book Your Consultation</Button>
+            <Button variant="gold" href="/contact" className="mt-7">Book Your Consultation</Button>
           </div>
         </div>
       </div>

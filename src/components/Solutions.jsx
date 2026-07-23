@@ -83,7 +83,7 @@ export default function Solutions() {
                 <h3 className="mt-4 text-xl text-maroon-800">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-maroon-900/60">{text}</p>
                 <div className="mt-5 group">
-                  <LinkArrow href="#contact">Learn More</LinkArrow>
+                  <LinkArrow href="/contact">Learn More</LinkArrow>
                 </div>
               </div>
             </article>

@@ -1,6 +1,12 @@
+import { Link } from 'react-router-dom'
 import { IconArrow } from '../icons.jsx'
 
-export function Button({ children, variant = 'primary', className = '', icon, href = '#', ...rest }) {
+// Internal app paths render a router <Link>; anything else (tel:, mailto:, #, http) an <a>
+function isInternal(href) {
+  return typeof href === 'string' && href.startsWith('/')
+}
+
+export function Button({ children, variant = 'primary', className = '', icon, href = '/', ...rest }) {
   const variants = {
     primary:
       'bg-maroon-700 text-cream-50 hover:bg-maroon-800 shadow-[0_10px_30px_-10px_rgba(109,26,45,0.55)]',
@@ -13,16 +19,16 @@ export function Button({ children, variant = 'primary', className = '', icon, hr
     light:
       'bg-cream-50 text-maroon-800 hover:bg-white',
   }
-  return (
-    <a
-      href={href}
-      className={`group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 ${variants[variant]} ${className}`}
-      {...rest}
-    >
+  const cls = `group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 ${variants[variant]} ${className}`
+  const inner = (
+    <>
       {icon && <span className="shrink-0">{icon}</span>}
       {children}
-    </a>
+    </>
   )
+  return isInternal(href)
+    ? <Link to={href} className={cls} {...rest}>{inner}</Link>
+    : <a href={href} className={cls} {...rest}>{inner}</a>
 }
 
 export function Eyebrow({ children, dark = false }) {
@@ -51,11 +57,15 @@ export function SectionHeading({ eyebrow, title, subtitle, dark = false, align =
   )
 }
 
-export function LinkArrow({ children, href = '#', dark = false }) {
-  return (
-    <a href={href} className={`inline-flex items-center gap-2 text-sm font-medium ${dark ? 'text-gold-300' : 'text-maroon-700'} transition-colors hover:text-gold-600`}>
+export function LinkArrow({ children, href = '/', dark = false }) {
+  const cls = `inline-flex items-center gap-2 text-sm font-medium ${dark ? 'text-gold-300' : 'text-maroon-700'} transition-colors hover:text-gold-600`
+  const inner = (
+    <>
       {children}
       <IconArrow width={16} height={16} className="transition-transform group-hover:translate-x-1" />
-    </a>
+    </>
   )
+  return isInternal(href)
+    ? <Link to={href} className={cls}>{inner}</Link>
+    : <a href={href} className={cls}>{inner}</a>
 }

@@ -73,7 +73,7 @@ export default function Insights() {
                 <h3 className="text-lg leading-snug text-maroon-800 group-hover:text-maroon-700">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-maroon-900/60">{text}</p>
                 <div className="mt-5 group">
-                  <LinkArrow href="#">Read Article</LinkArrow>
+                  <LinkArrow href="/blog">Read Article</LinkArrow>
                 </div>
               </div>
             </article>

@@ -73,7 +73,7 @@ export default function About() {
             ))}
           </div>
 
-          <Button variant="primary" href="#contact" className="mt-9" icon={<IconArrow width={16} height={16} />}>
+          <Button variant="primary" href="/contact" className="mt-9" icon={<IconArrow width={16} height={16} />}>
             Know More
           </Button>
         </div>

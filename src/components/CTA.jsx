@@ -22,7 +22,7 @@ export default function CTA() {
               Take the first step towards a harmonious space and a brighter future.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Button variant="primary" href="#" icon={<IconSparkle width={16} height={16} />}>Book a Consultation</Button>
+              <Button variant="primary" href="/contact" icon={<IconSparkle width={16} height={16} />}>Book a Consultation</Button>
               <Button variant="outline" href="tel:+919876543210" icon={<IconPhone width={16} height={16} />}>Call Now</Button>
             </div>
           </div>

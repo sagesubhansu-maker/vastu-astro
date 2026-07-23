@@ -30,10 +30,10 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button variant="primary" href="#contact" icon={<IconSparkle width={16} height={16} />}>
+            <Button variant="primary" href="/contact" icon={<IconSparkle width={16} height={16} />}>
               Book a Consultation
             </Button>
-            <Button variant="outline" href="#services" icon={<IconArrow width={16} height={16} />}>
+            <Button variant="outline" href="/services" icon={<IconArrow width={16} height={16} />}>
               Explore Services
             </Button>
           </div>
