@@ -2,8 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// base must match the GitHub Pages repo path: https://<user>.github.io/vastu-astro/
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/vastu-astro/' : '/',
+// Default base is "/" (correct for Hostinger / any root domain).
+// GitHub Pages sets VITE_BASE=/vastu-astro/ in its workflow to serve from a subpath.
+export default defineConfig({
+  base: process.env.VITE_BASE || '/',
   plugins: [react(), tailwindcss()],
-}))
+})
