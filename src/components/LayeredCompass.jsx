@@ -3,7 +3,7 @@ const asset = (file) => `${import.meta.env.BASE_URL}${file}`
 // Three transparent PNG/WebP layers stacked centre-aligned, each rotating 360°.
 // Order: ring (bottom) → ticks+diagonals (middle) → cardinal cross (top).
 const layers = [
-  { src: 'compass-1-ring.webp', spin: 'spin-layer-1' },
+  { src: 'compass-1-ring.webp', spin: '' }, // static — no rotation
   { src: 'compass-2-ticks.webp', spin: 'spin-layer-2' },
   { src: 'compass-3-cross.webp', spin: 'spin-layer-3' },
 ]
