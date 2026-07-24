@@ -14,12 +14,12 @@ const right = [
 function Item({ icon: Icon, title, text, align }) {
   return (
     <div className={`flex gap-4 ${align === 'right' ? 'lg:flex-row-reverse lg:text-right' : ''}`}>
-      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold-300/40 text-gold-300">
+      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold-400/50 text-gold-600">
         <Icon width={24} height={24} />
       </span>
       <div>
-        <h4 className="text-base font-semibold text-cream-50">{title}</h4>
-        <p className="mt-1 text-sm leading-relaxed text-cream-100/65">{text}</p>
+        <h4 className="text-base font-semibold text-maroon-800">{title}</h4>
+        <p className="mt-1 text-sm leading-relaxed text-maroon-900/60">{text}</p>
       </div>
     </div>
   )
@@ -27,12 +27,12 @@ function Item({ icon: Icon, title, text, align }) {
 
 export default function Balance() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-maroon-800 via-maroon-900 to-maroon-800 py-20 lg:py-24">
-      <div className="mandala-bg pointer-events-none absolute inset-0 opacity-40" />
+    <section className="relative overflow-hidden bg-white py-20 lg:py-24">
+      <div className="mandala-bg pointer-events-none absolute inset-0 opacity-60" />
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center">
-          <Eyebrow dark>Complete Harmony</Eyebrow>
-          <h2 className="mx-auto mt-4 max-w-2xl font-display text-3xl leading-tight text-cream-50 sm:text-4xl">
+          <Eyebrow>Complete Harmony</Eyebrow>
+          <h2 className="mx-auto mt-4 max-w-2xl font-display text-3xl leading-tight text-maroon-800 sm:text-4xl">
             Balance Every Direction of Your Life
           </h2>
         </div>
@@ -44,7 +44,7 @@ export default function Balance() {
 
           {/* Rotating layered compass */}
           <div className="order-1 mx-auto w-64 sm:w-72 lg:order-2 lg:w-full lg:max-w-sm">
-            <LayeredCompass className="drop-shadow-[0_20px_50px_rgba(0,0,0,0.35)]" />
+            <LayeredCompass className="drop-shadow-[0_20px_45px_rgba(109,26,45,0.18)]" />
           </div>
 
           <div className="order-3 space-y-10">
