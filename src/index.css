@@ -60,6 +60,15 @@
 }
 .animate-spin-slow { animation: spin-slow 60s linear infinite; }
 
+/* Layered compass rotation (each layer spins 360°, varied speed for depth) */
+.spin-layer-1 { animation: spin-slow 50s linear infinite; }
+.spin-layer-2 { animation: spin-slow 38s linear infinite reverse; }
+.spin-layer-3 { animation: spin-slow 28s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .spin-layer-1, .spin-layer-2, .spin-layer-3, .animate-spin-slow, .animate-floaty { animation: none; }
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
